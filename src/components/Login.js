@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import { url } from '../App'
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -33,19 +32,19 @@ function Login() {
             
                 <h1>Login Your Account</h1>
                 <form action='POST' className='form_container'>
-    <input type="email" onChange={(e)=>setEmail(e.target.value)} placeholder="Email" name="" id="" className='input'/>
-    <input type="password" onChange={(e)=>setPassword(e.target.value)} placeholder="Password" name="" id="" className='input'/>
+                <input type="email" onChange={(e)=>setEmail(e.target.value)} placeholder="Email" name="" id="" className='input'/>
+                <input type="password" onChange={(e)=>setPassword(e.target.value)} placeholder="Password" name="" id="" className='input'/>
 
-    <Button variant="primary" className='green_btn' onClick={()=>handleLogin()}>
-    Sign In
-   </Button>   
+                <Button variant="primary" className='green_btn' onClick={()=>handleLogin()}>
+                Sign In
+               </Button>   
 
-</form>
-</div>
+            </form>
+         </div>
 
-<div className='right'>
-<h1>New Here ?</h1>
-<Link to="/signup">
+         <div className='right'>
+         <h1>New Here ?</h1>
+      <Link to="/signup">
 			<button type="button" className='white_btn'>
 			Sing Up
 			</button>

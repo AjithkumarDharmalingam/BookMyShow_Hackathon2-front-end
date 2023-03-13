@@ -7,14 +7,13 @@ import axios from 'axios';
 
 function Email() {
     let token = sessionStorage.getItem('token')
-    let [subject,setSubject] = useState("")
     let [message,setMessage] = useState("")
     let navigate = useNavigate()
     
 
     let sendEmail = async()=>{
         try {
-            let res = await axios.post(`${url}/users/send-email`,{subject,message},{
+            let res = await axios.post(`${url}/users/send-email`,{message},{
               headers:{
                 Authorization:`Bearer ${token}`
               }
@@ -44,7 +43,7 @@ function Email() {
         <div className='left'>
              <h1>Email Conformation</h1>
             <form action='POST' className='form_container '>
-                  
+            <input type="text" onChange={(e)=>setMessage(e.target.value)} name="" id="" className='input'/>  
                 <Button variant="primary" onClick={()=>sendEmail()} >
                  Click Now Send in Mail Ticket
                </Button>   

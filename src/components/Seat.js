@@ -50,26 +50,7 @@ function Seat() {
       )[0];
     }
   };
-  const selectSeats = () => {
-    const selected = selectingSeats.filter(
-      (currentSeat) => currentSeat.available === false
-    );
-    if (selected.length !== 0) {
-      axios
-        .post(`${url}/seat`, { seats: selected })
-        .then((res) => {
-          console.log(res)
-          if (res.status === 200) {
-            
-            selectingSeats(res.data.meg)
-          } else {
-            // TODO 
-          }
-        });
-    } else {
-      alert("Please Select Seats");
-    }
-  };
+ 
 
 
 
